@@ -1,0 +1,8 @@
+# Copyright 1999-2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+# Leon Lynch <lynch.leon@gmail.com>
+# Live ebuilds are intended for ebuild and pre-release testing only. Users
+# should use versioned ebuilds instead.
+=dev-libs/tr31-9999
+=dev-libs/dukpt-9999

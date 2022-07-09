@@ -42,7 +42,7 @@ src_configure() {
 	local mycmakeargs=(
 		$(cmake_use_find_package mbedtls MbedTLS)
 		$(cmake_use_find_package openssl OpenSSL)
-		$(cmake_use_find_package openssl tr31)
+		$(cmake_use_find_package tr31 tr31)
 		-DBUILD_DOCS=$(usex doc)
 		-DBUILD_TESTING=$(usex test)
 	)
