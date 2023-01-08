@@ -6,3 +6,4 @@
 # should use versioned ebuilds instead.
 =dev-libs/tr31-9999
 =dev-libs/dukpt-9999
+=dev-libs/emv-utils-9999
