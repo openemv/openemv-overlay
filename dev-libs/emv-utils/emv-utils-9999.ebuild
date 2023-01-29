@@ -26,6 +26,8 @@ BDEPEND="
 "
 
 RDEPEND="
+	app-text/iso-codes
+	dev-libs/json-c
 	pcsc-lite? ( sys-apps/pcsc-lite )
 "
 DEPEND="
