@@ -26,6 +26,7 @@ BDEPEND="
 "
 
 RDEPEND="
+	dev-libs/boost[icu]
 	app-text/iso-codes
 	dev-libs/json-c
 	pcsc-lite? ( sys-apps/pcsc-lite )
