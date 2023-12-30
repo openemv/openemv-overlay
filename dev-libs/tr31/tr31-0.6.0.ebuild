@@ -5,24 +5,21 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="DUKPT libraries and tools"
-HOMEPAGE="https://github.com/openemv/dukpt"
+DESCRIPTION="Key block library and tools for ANSI X9.143, ASC X9 TR-31 and ISO 20038"
+HOMEPAGE="https://github.com/openemv/tr31"
 if [[ "${PV}" == *9999 ]] ; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/openemv/dukpt.git"
+	EGIT_REPO_URI="https://github.com/openemv/tr31.git"
 	EGIT_BRANCH="master"
 else
-	SRC_URI="https://github.com/openemv/dukpt/releases/download/${PV}/${P}-src.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/openemv/tr31/releases/download/${PV}/${P}-src.tar.gz -> ${P}.tar.gz"
 fi
 
-LICENSE="LGPL-2.1+ GPL-3"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+mbedtls openssl qt5 +tr31 doc test"
-REQUIRED_USE="
-	^^ ( mbedtls openssl )
-	qt5? ( tr31 )
-"
+IUSE="+mbedtls openssl doc test"
+REQUIRED_USE="|| ( mbedtls openssl )"
 RESTRICT="!test? ( test )"
 
 BDEPEND="
@@ -32,12 +29,6 @@ BDEPEND="
 RDEPEND="
 	mbedtls? ( net-libs/mbedtls )
 	openssl? ( dev-libs/openssl )
-	qt5? (
-		dev-qt/qtcore:5
-		dev-qt/qtgui:5
-		dev-qt/qtwidgets:5
-	)
-	tr31? ( =dev-libs/tr31-0.5* )
 "
 DEPEND="
 	${RDEPEND}
@@ -51,10 +42,7 @@ src_configure() {
 	local mycmakeargs=(
 		$(cmake_use_find_package mbedtls MbedTLS)
 		$(cmake_use_find_package openssl OpenSSL)
-		$(cmake_use_find_package qt5 Qt5)
-		$(cmake_use_find_package tr31 tr31)
 		-DBUILD_DOCS=$(usex doc)
-		-DBUILD_DUKPT_UI=$(usex qt5)
 		-DBUILD_TESTING=$(usex test)
 	)
 
@@ -65,4 +53,4 @@ src_test() {
 	cmake_src_test
 }
 
-DOCS=( README.md LICENSE ui/LICENSE.gpl )
+DOCS=( README.md LICENSE )
