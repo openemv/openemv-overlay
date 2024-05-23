@@ -22,7 +22,7 @@ IUSE="+pcsc-lite doc test"
 RESTRICT="!test? ( test )"
 
 BDEPEND="
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 "
 
 RDEPEND="

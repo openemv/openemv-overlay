@@ -23,7 +23,7 @@ REQUIRED_USE="|| ( mbedtls openssl )"
 RESTRICT="!test? ( test )"
 
 BDEPEND="
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 "
 
 RDEPEND="
