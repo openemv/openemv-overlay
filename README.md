@@ -8,6 +8,6 @@ Gentoo overlay for [OpenEMV](https://github.com/openemv) projects.
 License
 -------
 
-Copyright 2022-2024 [Leon Lynch](https://github.com/leonlynch).
+Copyright 2022-2025 [Leon Lynch](https://github.com/leonlynch).
 
 This project is licensed under the terms of the LGPL v2.1 license. See LICENSE file.
